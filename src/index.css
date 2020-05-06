@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
   margin: 0;
   background: #151616;
@@ -7,10 +8,9 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
+  font-family: 'Roboto', sans-serif;
+}
 
 :root {
   --bg:  #242526;
@@ -117,7 +117,6 @@ a {
   margin-right: 0.5rem;
 }
 
-
 .menu-item .icon-button:hover {
   filter: none;
 }
@@ -147,7 +146,6 @@ a {
   transition: all var(--speed) ease;
 }
 
-
 .menu-secondary-enter {
   transform: translateX(110%);
 }
@@ -155,9 +153,7 @@ a {
   transform: translateX(0%);
   transition: all var(--speed) ease;
 }
-.menu-secondary-exit {
 
-}
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all var(--speed) ease;

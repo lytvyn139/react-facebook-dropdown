@@ -17,7 +17,6 @@ function App() {
       <NavItem icon={<PlusIcon />} />
       <NavItem icon={<BellIcon />} />
       <NavItem icon={<MessengerIcon />} />
-
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
@@ -41,7 +40,6 @@ function NavItem(props) {
       <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
-
       {open && props.children}
     </li>
   );
@@ -73,7 +71,6 @@ function DropdownMenu() {
 
   return (
     <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
-
       <CSSTransition
         in={activeMenu === 'main'}
         timeout={500}
@@ -81,7 +78,8 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem leftIcon={<ChevronIcon />}>My Profile</DropdownItem>
+          
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
@@ -89,12 +87,11 @@ function DropdownMenu() {
             Settings
           </DropdownItem>
           <DropdownItem
-            leftIcon="🦧"
+            leftIcon="🤖"
             rightIcon={<ChevronIcon />}
-            goToMenu="animals">
-            Animals
+            goToMenu="moods">
+            Moods
           </DropdownItem>
-
         </div>
       </CSSTransition>
 
@@ -106,29 +103,33 @@ function DropdownMenu() {
         onEnter={calcHeight}>
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>My Tutorial</h2>
+            <h2>Go back</h2>
           </DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>CSS</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>JavaScript</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Simple</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Menu</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Demostration</DropdownItem>
           <DropdownItem leftIcon={<BoltIcon />}>Awesome!</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Awesome!</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>End</DropdownItem>
         </div>
       </CSSTransition>
 
       <CSSTransition
-        in={activeMenu === 'animals'}
+        in={activeMenu === 'moods'}
         timeout={500}
         classNames="menu-secondary"
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Animals</h2>
+            <h2>Go back</h2>
           </DropdownItem>
-          <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
-          <DropdownItem leftIcon="🐸">Frog</DropdownItem>
-          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
-          <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
+          <DropdownItem leftIcon="🤷‍♂️">Not sure</DropdownItem>
+          <DropdownItem leftIcon="🦸‍♂️">Superhero</DropdownItem>
+          <DropdownItem leftIcon="🧛">Vampire</DropdownItem>
+          <DropdownItem leftIcon="🧙‍♂️">Wizzard</DropdownItem>
+          <DropdownItem leftIcon="🧞‍♂️">Ginnie</DropdownItem>
+          <DropdownItem leftIcon="🧟‍♂️">Zombie</DropdownItem>
         </div>
       </CSSTransition>
     </div>
